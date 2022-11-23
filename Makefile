@@ -16,7 +16,7 @@ LIBS = ft_printf.h
 
 SRC = ft_printf.c ft_printf_utils.c ft_printf_hlp.c
 
-OBJ = $(SRC:.c=.o)
+OBJS = $(SRC:.c=.o)
 
 RM 	= rm -rf
 
