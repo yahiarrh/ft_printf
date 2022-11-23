@@ -6,7 +6,7 @@
 #    By: yrrhaibi <yrrhaibi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/21 13:11:34 by yrrhaibi          #+#    #+#              #
-#    Updated: 2022/11/22 00:14:27 by yrrhaibi         ###   ########.fr        #
+#    Updated: 2022/11/22 23:33:24 by yrrhaibi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,17 +20,19 @@ OBJS = $(SRC:.c=.o)
 
 RM 	= rm -rf
 
+CC = cc
+
 CFLAGS = -Wall -Wextra -Werror
 
 AR = ar -rc
 
+all : $(NAME)
+
 $(NAME) : $(OBJS)
 	$(AR) $@ $?
 
-$(OBJS) : $(SRC) $(LIBS)
-	cc $(CFLAGS) -c $<
-
-all : $(NAME)
+%.o : %.c $(LIBS)
+	$(CC) $(CFLAGS) -c $< 
 
 clean :
 	$(RM) $(OBJS)
@@ -39,8 +41,6 @@ clean :
 fclean : clean
 	$(RM) $(NAME)
 
-
 re : fclean all
 
 .PHONY : all clean fclean re
-	

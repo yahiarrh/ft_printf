@@ -6,7 +6,7 @@
 /*   By: yrrhaibi <yrrhaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:21:55 by yrrhaibi          #+#    #+#             */
-/*   Updated: 2022/11/21 19:58:53 by yrrhaibi         ###   ########.fr       */
+/*   Updated: 2022/11/23 16:58:19 by yrrhaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	prt(va_list reg, const char *arg)
 	else if (*arg == 'p')
 	{
 		count += ft_putstr("0x");
-		count += ft_p(va_arg(reg, int));
+		count += ft_p(va_arg(reg, uintptr_t));
 	}
 	else if (*arg == 'x')
 		count += put_hexl(va_arg(reg, unsigned int));
@@ -69,9 +69,9 @@ int	ft_printf(const char *arg, ...)
 			arg++;
 			num += prt(reg, arg);
 		}
-		if (*arg != '%')
+		else if (*arg != '%')
 			num += ft_putchar(*arg);
-		arg++;
+		++arg;
 	}
 	va_end (reg);
 	return (num);

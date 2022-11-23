@@ -6,7 +6,7 @@
 /*   By: yrrhaibi <yrrhaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:21:57 by yrrhaibi          #+#    #+#             */
-/*   Updated: 2022/11/21 20:02:03 by yrrhaibi         ###   ########.fr       */
+/*   Updated: 2022/11/23 16:45:05 by yrrhaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,15 @@ int	ft_putchar(char c)
 	return (1);
 }
 
-int	ft_putstr(char *s)
+int	ft_putstr(const char *s)
 {
 	int	i;
 
 	if (!s)
-		return (0);
+	{
+		ft_putstr("(null)");
+		return (6);
+	}
 	i = 0;
 	while (s[i])
 	{
@@ -57,13 +60,14 @@ int	ft_putnbr(int n)
 	return (num);
 }
 
-int	ft_putnbr_uns(int n)
+int	ft_putnbr_uns(unsigned int n)
 {
 	long	nbr;
 	int		num;
 
 	num = 0;
 	nbr = n;
+	
 	if (nbr > 9)
 	{
 		num += ft_putnbr(nbr / 10);

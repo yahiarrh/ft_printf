@@ -6,7 +6,7 @@
 /*   By: yrrhaibi <yrrhaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 23:47:48 by yrrhaibi          #+#    #+#             */
-/*   Updated: 2022/11/21 20:00:13 by yrrhaibi         ###   ########.fr       */
+/*   Updated: 2022/11/23 16:44:58 by yrrhaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 int	ft_printf(const char *arg, ...);
 int	prt(va_list reg, const char *arg);
 int	if_conv(char s);
-int	ft_putnbr_uns(int n);
+int	ft_putnbr_uns(unsigned int n);
 int	ft_putnbr(int n);
-int	ft_putstr(char *s);
+int	ft_putstr(const char *s);
 int	ft_putchar(char c);
 int	put_hexl(unsigned int n);
 int	put_hexu(unsigned int n);

@@ -6,13 +6,13 @@
 /*   By: yrrhaibi <yrrhaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 02:39:56 by yrrhaibi          #+#    #+#             */
-/*   Updated: 2022/11/21 02:44:00 by yrrhaibi         ###   ########.fr       */
+/*   Updated: 2022/11/23 16:12:38 by yrrhaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	put_hexu(unsigned int n)
+int	put_hexl(unsigned int n)
 {
 	char	*b;
 	int		num;
@@ -23,13 +23,13 @@ int	put_hexu(unsigned int n)
 		num += ft_putchar(b[n]);
 	else
 	{
-		num += ft_p(n / 16);
-		num += ft_p(n % 16);
+		num += put_hexl(n / 16);
+		num += put_hexl(n % 16);
 	}
 	return (num);
 }
 
-int	put_hexl(unsigned int n)
+int	put_hexu(unsigned int n)
 {
 	char	*b;
 	int		num;
@@ -40,8 +40,8 @@ int	put_hexl(unsigned int n)
 		num += ft_putchar(b[n]);
 	else
 	{
-		num += ft_p(n / 16);
-		num += ft_p(n % 16);
+		num += put_hexu(n / 16);
+		num += put_hexu(n % 16);
 	}
 	return (num);
 }
